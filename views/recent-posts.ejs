@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="p-10 bg-zinc-900 text-white min-h-screen">
+
+        <div class="flex justify-between items-center w-full">
+            <a class="text-blue-500 mb-10" href="/">Go back to home</a>
+            <a class="bg-red-500 rounded-md px-3 py-2 inline-block mb-10" href="/logout">Logout</a>
+        </div>
+        
+        <div id="page2" class="py-10">
+            <h2 id="latest-posts" class="text-4xl font-bold text-center mb-8">Recent Posts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <% posts.forEach(function(post){ %>
+                    <div class="post p-4 mb-4 border-[1px] rounded-md bg-zinc-800 border-zinc-700">
+                        <h4 class="text-blue-500 mb-2">@<%= post.user ? post.user.username : 'Unknown User' %></h4>
+                        <p class="text-base leading-normal"><%= post.content %></p>
+                        <div class="flex items-center mt-3">
+                            <small class="text-gray-400 mr-2"><%= post.likes.length %> Likes</small>
+                            <% if (user && post.likes.indexOf(user._id) === -1) { %>
+                                <a href="/like/<%= post._id %>" class="text-blue-500 mr-2">Like</a>
+                            <% } else { %>
+                                <a href="/like/<%= post._id %>" class="text-blue-500 mr-2">Unlike</a>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

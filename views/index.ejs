@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOGO_</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .relative {
+            position: relative;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        #posts-container {
+            display: flex;
+            animation: scroll 15s linear infinite;
+        }
+
+        .bg-zinc-800 {
+            min-width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="w-full bg-zinc-800 p-4 flex justify-between items-center text-white">
+        <h1 class="text-xl font-bold">BLOGO_</h1>
+        <div class="flex space-x-6">
+            <a href="/recent-posts" class="hover:text-blue-400">Recent Posts</a>
+            <a href="/about" class="hover:text-blue-400">About Us</a>
+            <a href="/contact" class="hover:text-blue-400">Contact</a>
+        </div>
+        <button id="loginButton" class="bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-600" onclick="location.href='/login'">LOGIN</button>
+        <button id="logoutButton" class="bg-red-500 px-4 py-2 rounded-md hover:bg-red-600 hidden" onclick="location.href='/logout'">LOGOUT</button>
+
+    </nav>
+
+    <div id="main" class="p-10 bg-zinc-900 text-white min-h-screen">
+        <div id="page1" class="text-center py-10">
+            <h1 class="text-6xl font-bold text-red-500 ">BLOG_SPACE</h1>
+            <h3 class="text-2xl mt-4 text-zinc-400">Your Gateway to Insightful Articles and the Latest in Modern Design Trends</h3>
+            <p class="mt-4 text-xl text-zinc-400">Explore topics on Brand Design, User Experience, Digital Product Design, and more.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#latest-posts" class="bg-blue-500 px-5 py-3 rounded-md text-white hover:bg-blue-600 transition">Read Latest Posts</a>
+                <a href="#new-user" class="bg-transparent border-2 border-blue-500 px-5 py-3 rounded-md text-blue-500 hover:bg-blue-500 hover:text-white transition">Subscribe</a>
+            </div>
+        </div>
+
+        <div id="page2" class="py-10">
+            <h2 id="latest-posts" class="text-4xl font-bold text-center mb-8">Latest Blog Posts</h2>
+            <div class="relative overflow-hidden">
+                <div id="posts-container" class="flex space-x-8">
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">How to Design an AI Interface Users Will Trust in 2024</h3>
+                        <p class="text-zinc-400">An in-depth look at designing AI interfaces that users can trust...</p>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">The Future of E-commerce Design</h3>
+                        <p class="text-zinc-400">Exploring the latest trends in e-commerce design...</p>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">Web 3.0: The Next Generation of the Internet</h3>
+                        <p class="text-zinc-400">How Web 3.0 is transforming the digital landscape...</p>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">UI/UX Tips for Fintech Apps</h3>
+                        <p class="text-zinc-400">Designing user-friendly and secure fintech applications...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page3" class="py-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-zinc-800 p-5 rounded-md">
+                    <h2 class="text-3xl font-bold mb-4">Modern Tech</h2>
+                    <p class="text-zinc-400">Modern technology continues to redefine our world with innovations that span artificial intelligence, blockchain, and quantum computing. These advancements are reshaping industries, enhancing connectivity, and accelerating digital transformation globally. From smart cities to personalized medicine, modern tech is driving unprecedented possibilities and shaping the future of humanity.</p>
+                </div>
+                <div>
+                    <img src="https://assets-global.website-files.com/64a5e6675a4159253d0ee3e0/65a93ac90b586168e5917ac8_Rhea%20-%20cover_horizontal_low.webp" alt="Modern Tech" class="w-full rounded-md">
+                </div>
+                <div>
+                    <img src="https://academy.moralis.io/wp-content/uploads/2023/01/23_01_The-Future-of-the-Internet-How-Will-Web3-Change-the-World-.jpg" alt="Changing Web" class="w-full rounded-md">
+                </div>
+                <div class="bg-zinc-800 p-5 rounded-md">
+                    <h2 class="text-3xl font-bold mb-4">Changing Web</h2>
+                    <p class="text-zinc-400">
+                        The changing web landscape encompasses the evolution towards decentralized platforms, immersive experiences through augmented reality (AR) and virtual reality (VR), and the integration of blockchain technology into web infrastructures. These shifts are fostering new digital economies, enhancing user engagement, and paving the way for a more interconnected and secure online environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page4" class="py-10 text-center">
+            <button class="bg-blue-500 px-5 py-3 rounded-md hover:bg-blue-600" onclick="location.href='/login'">Write and Explore</button>
+            <div class="mt-10 space-y-5 text-zinc-400">
+                <p>We lead your startup at every step of its growth, providing unparalleled personal service at every interaction...</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">UI/UX Design</h3>
+                        <p>UX Audit, UI Design, UX Design, UX Research...</p>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">Product Design</h3>
+                        <p>UX Audit, UI Design, UX Design, UX Research...</p>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">Marketing</h3>
+                        <p>Brand Strategy, Content Creation, Digital Marketing...</p>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-md">
+                        <h3 class="text-xl font-semibold mb-4">Development</h3>
+                        <p>Web Development, App Development, System Integration...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="w-full min-h-screen bg-zinc-900 text-white p-10 " id=new-user>
+                <h3 class="text-3xl mb-5">Create Account</h3>
+                <form action="/register" method="post">
+                    <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="text" placeholder="name" name="name">
+                    <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="text" placeholder="username" name="username">
+                    <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="password" placeholder="password" name="password">
+                    <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="number" placeholder="age" name="age">
+                    <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="email" placeholder="email" name="email">
+                    <input class="px-5 py-2 outline-none bg-blue-500 rounded-md" type="submit" value="Create Account">
+            
+                </form>
+                <h5 class="mt-5 text-blue-500">Already have an account?</h5>
+                <a class="text-zinc-600" href="/login">Login</a>
+            
+            </div>
+        </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const container = document.getElementById("posts-container");
+                const clone = container.innerHTML;
+                container.innerHTML += clone;
+            });
+
+            //login-logout
+
+            if (isLoggedIn) {
+                document.getElementById('loginButton').classList.add('hidden');
+                document.getElementById('logoutButton').classList.remove('hidden');
+            } else {
+                document.getElementById('loginButton').classList.remove('hidden');
+                document.getElementById('logoutButton').classList.add('hidden');
+            }
+        </script>
+</body>
+</html>
+
+
+<!-- <div class="w-full min-h-screen bg-zinc-900 text-white p-10">
+    <h3 class="text-3xl mb-5">Create Account</h3>
+    <form action="/register" method="post">
+        <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="text" placeholder="name" name="name">
+        <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="text" placeholder="username" name="username">
+        <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="password" placeholder="password" name="password">
+        <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="number" placeholder="age" name="age">
+        <input class="px-3 py-2 outline-none bg-transparent border-2 border-zinc-800 rounded-md" type="email" placeholder="email" name="email">
+        <input class="px-5 py-2 outline-none bg-blue-500 rounded-md" type="submit" value="Create Account">
+
+    </form>
+    <h5 class="mt-5 text-blue-500">Already have an account?</h5>
+    <a class="text-zinc-600" href="/login">Login</a>
+
+</div> -->
