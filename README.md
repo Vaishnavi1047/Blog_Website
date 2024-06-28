@@ -1,5 +1,6 @@
 # Blog_Website
 
-npm i express  
+npm init -y  
+npm i express mongoose    
 npm i ejs   
-npm i bcrypt  
+npm i bcrypt jsonwebtoken cookie-parser  
